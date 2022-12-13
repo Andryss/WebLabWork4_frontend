@@ -1,0 +1,10 @@
+img.logo {
+    rotate: 0deg;
+    transition: 2s;
+    cursor: pointer;
+}
+
+img.logo:hover {
+    rotate: 1440deg;
+    transition: 2s;
+}

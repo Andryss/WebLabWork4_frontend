@@ -1,7 +1,7 @@
 export interface User {
-    username: string | null,
-    password: string | null,
-    isLoggedIn: boolean
+    username: string,
+    isLoggedIn: boolean,
+    authorities: string[]
 }
 
 export interface UserState {

@@ -1,10 +1,10 @@
 export interface Request {
     id: number,
-    createDate: string,
+    createdTime: string,
     x: number,
     y: number,
     r: number,
-    res: boolean
+    result: boolean
 }
 
 export interface RequestState {

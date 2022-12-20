@@ -111,7 +111,9 @@ const FormPage = () => {
         )
     }
 
-    const drawPlotOnCanvas = (rValue: number | null) => {
+    // draw plot on canvas
+    useEffect(() => {
+        const rValue = (!rError) ? rVal : null;
         if (!canvas) return;
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
@@ -230,11 +232,14 @@ const FormPage = () => {
             ctx.textBaseline = (yPoint > 0) ? "top" : "bottom";
             ctx.fillText(" " + xPoint + ", " + yPoint + " ", center + unit * xPoint, center - unit * yPoint);
         }
-    }
-
-    useEffect(() => {
-        drawPlotOnCanvas(((!rError) ? rVal : null));
-    }, [drawPlotOnCanvas, rError, rVal]);
+    }, [arrowLength, arrowWidth, axisMargin,
+        axisWidth, axisWidthOffset, canvas,
+        center, fontSize, fontStr, rError,
+        rVal, requests, selectedRequest,
+        streakLength, streakLengthOffset,
+        streakWidth, streakWidthOffset, unit,
+        width, xPoint, yPoint]
+    );
 
     const getXCoordinateOrConvert = (xOffset: number) => {
         return (x.length !== 0 && !xError ? xVal : ((xOffset - center) / unit));

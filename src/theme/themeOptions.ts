@@ -22,5 +22,8 @@ export const themeOptions: ThemeOptions = {
             desktop: 1154,
             fullsize: 1536
         }
+    },
+    typography: {
+        fontFamily: "Comic Sans MS"
     }
 };
